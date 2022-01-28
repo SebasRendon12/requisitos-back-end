@@ -21,7 +21,7 @@ class Server {
   async dbConnection() {
     try {
       await db.authenticate();
-      await db.sync({ alter: true });
+      // await db.sync({ alter: true });
       console.log('MySql connected');
     } catch (error: any) {
       throw new Error(error);
