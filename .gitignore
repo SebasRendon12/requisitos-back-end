@@ -9,6 +9,7 @@ dist/
 migrations/
 seeders/
 .env
+db/connection.ts
 
 # Compiled Java class files
 *.class
