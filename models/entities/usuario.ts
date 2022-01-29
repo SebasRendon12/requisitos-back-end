@@ -1,0 +1,36 @@
+import { DataTypes } from "sequelize";
+import db from "../../db/connection";
+
+const usuario = db.define("usuario", {
+    id: {
+        allowNull: false,
+        primaryKey: true,
+        unique: true,
+        type: DataTypes.STRING(100),
+        autoIncrement: true
+    },
+    nombre_completo: {
+        allowNull: true,
+        type: DataTypes.STRING(100)
+    },
+    nombre_usuario: {
+        allowNull: true,
+        type: DataTypes.STRING(100)
+    },
+    contraseña: {
+        allowNull: true,
+        type: DataTypes.STRING(100)
+    },
+    perfil: {
+        allowNull: true,
+        type: DataTypes.STRING(100)
+    },
+    dninfoa_id: {
+        allowNull: true,
+        type: DataTypes.INTEGER
+    },
+}, {
+    timestamps: false
+});
+
+export default usuario;
