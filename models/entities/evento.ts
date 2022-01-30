@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const evento = db.define("evento", {
     nombre: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.STRING(100)
@@ -25,7 +24,8 @@ const evento = db.define("evento", {
         type: DataTypes.STRING(100)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default evento;

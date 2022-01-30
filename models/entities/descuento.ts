@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const descuento = db.define("descuento", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -30,7 +29,8 @@ const descuento = db.define("descuento", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default descuento;

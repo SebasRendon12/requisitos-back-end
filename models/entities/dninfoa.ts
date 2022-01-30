@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const dninfoa = db.define("dninfoa", {
   id: {
-    allowNull: false,
     primaryKey: true,
     unique: true,
     type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const dninfoa = db.define("dninfoa", {
     type: DataTypes.INTEGER
   },
 }, {
-  timestamps: false
+  timestamps: false,
+  freezeTableName: true,
 });
 
 export default dninfoa;

@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const admitido = db.define("admitido", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const admitido = db.define("admitido", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default admitido;

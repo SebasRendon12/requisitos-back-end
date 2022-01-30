@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const rector = db.define("rector", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -14,7 +13,8 @@ const rector = db.define("rector", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default rector;

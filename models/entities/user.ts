@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const User = db.define("User", {
   id: {
-    allowNull: false,
     primaryKey: true,
     unique: true,
     type: DataTypes.INTEGER
@@ -25,7 +24,8 @@ const User = db.define("User", {
     type: DataTypes.BOOLEAN
   }
 }, {
-  timestamps: false
+  timestamps: false,
+    freezeTableName: true,
 });
 
 export default User;

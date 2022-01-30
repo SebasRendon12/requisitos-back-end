@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const lider_nacional = db.define("lider_nacional", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -14,7 +13,8 @@ const lider_nacional = db.define("lider_nacional", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default lider_nacional;

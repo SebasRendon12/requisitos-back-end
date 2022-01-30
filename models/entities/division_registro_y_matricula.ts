@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const division_registro_y_matricula = db.define("division_registro_y_matricula", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -14,7 +13,8 @@ const division_registro_y_matricula = db.define("division_registro_y_matricula",
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default division_registro_y_matricula;

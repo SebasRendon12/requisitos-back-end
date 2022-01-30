@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const historia_academica = db.define("historia_academica", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -34,7 +33,8 @@ const historia_academica = db.define("historia_academica", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default historia_academica;

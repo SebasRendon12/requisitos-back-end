@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const salon_de_clase = db.define("salon_de_clase", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -26,7 +25,8 @@ const salon_de_clase = db.define("salon_de_clase", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default salon_de_clase;

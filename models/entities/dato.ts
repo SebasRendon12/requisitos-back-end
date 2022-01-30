@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const dato = db.define("dato", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -30,7 +29,8 @@ const dato = db.define("dato", {
         type: DataTypes.STRING(500)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default dato;

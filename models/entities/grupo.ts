@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const grupo = db.define("grupo", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -66,7 +65,8 @@ const grupo = db.define("grupo", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default grupo;

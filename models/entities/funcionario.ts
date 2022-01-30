@@ -2,9 +2,14 @@ import { DataTypes } from "sequelize";
 import db from "../../db/connection";
 
 const funcionario = db.define("funcionario", {
+    id: {
+        primaryKey: true,
+        unique: true,
+        type: DataTypes.INTEGER,
+        autoIncrement: true
+    },
     cedula: {
         allowNull: false,
-        primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER
     },
@@ -57,7 +62,8 @@ const funcionario = db.define("funcionario", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default funcionario;

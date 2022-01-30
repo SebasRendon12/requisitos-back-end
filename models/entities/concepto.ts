@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const concepto = db.define("concepto", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const concepto = db.define("concepto", {
         type: DataTypes.BIGINT
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default concepto;

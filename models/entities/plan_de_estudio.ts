@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const plan_de_estudio = db.define("plan_de_estudio", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -30,7 +29,8 @@ const plan_de_estudio = db.define("plan_de_estudio", {
         type: DataTypes.STRING(100)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default plan_de_estudio;

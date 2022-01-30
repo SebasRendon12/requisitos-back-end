@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const municipio = db.define("municipio", {
     id_municipio: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const municipio = db.define("municipio", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default municipio;

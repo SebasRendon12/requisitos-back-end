@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const documento = db.define("documento", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -38,7 +37,8 @@ const documento = db.define("documento", {
         type: DataTypes.BOOLEAN
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default documento;

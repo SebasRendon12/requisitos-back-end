@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const periodo_academico = db.define("periodo_academico", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -26,7 +25,8 @@ const periodo_academico = db.define("periodo_academico", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default periodo_academico;

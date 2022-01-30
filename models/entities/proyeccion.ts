@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const proyeccion = db.define("proyeccion", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -14,7 +13,8 @@ const proyeccion = db.define("proyeccion", {
         type: DataTypes.FLOAT
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default proyeccion;

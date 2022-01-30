@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const pagina_wed_dninfoa = db.define("pagina_wed_dninfoa", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const pagina_wed_dninfoa = db.define("pagina_wed_dninfoa", {
         type: DataTypes.STRING(100)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default pagina_wed_dninfoa;

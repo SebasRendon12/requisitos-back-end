@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const asignatura_por_cursar = db.define("asignatura_por_cursar", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const asignatura_por_cursar = db.define("asignatura_por_cursar", {
         type: DataTypes.STRING(20)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default asignatura_por_cursar;

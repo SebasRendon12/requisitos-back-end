@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const proyecto = db.define("proyecto", {
     nombre: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.STRING(100)
@@ -29,7 +28,8 @@ const proyecto = db.define("proyecto", {
         type: DataTypes.STRING(100)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default proyecto;

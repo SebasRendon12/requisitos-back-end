@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const asignaturaxcomponente = db.define("asignaturaxcomponente", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.BIGINT,
@@ -14,7 +13,8 @@ const asignaturaxcomponente = db.define("asignaturaxcomponente", {
         type: DataTypes.BIGINT
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default asignaturaxcomponente;

@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const documentacion_socioeconomica = db.define("documentacion_socioeconomica", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -22,7 +21,8 @@ const documentacion_socioeconomica = db.define("documentacion_socioeconomica", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default documentacion_socioeconomica;

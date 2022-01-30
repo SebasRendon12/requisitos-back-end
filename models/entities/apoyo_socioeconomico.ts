@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const apoyo_socioeconomico = db.define("apoyo_socioeconomico", {
     id_apoyo: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const apoyo_socioeconomico = db.define("apoyo_socioeconomico", {
         type: DataTypes.BOOLEAN
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default apoyo_socioeconomico;

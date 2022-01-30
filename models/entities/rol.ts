@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const rol = db.define("rol", {
     id_rol: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const rol = db.define("rol", {
         type: DataTypes.STRING(100)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default rol;

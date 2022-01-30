@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const sesion = db.define("sesion", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const sesion = db.define("sesion", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default sesion;

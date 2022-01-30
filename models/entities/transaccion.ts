@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const transaccion = db.define("transaccion", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -30,7 +29,8 @@ const transaccion = db.define("transaccion", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default transaccion;

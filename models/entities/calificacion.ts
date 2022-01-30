@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const calificacion = db.define("calificacion", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -22,7 +21,8 @@ const calificacion = db.define("calificacion", {
         type: DataTypes.FLOAT
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default calificacion;

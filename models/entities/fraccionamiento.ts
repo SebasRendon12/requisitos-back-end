@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const fraccionamiento = db.define("fraccionamiento", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -13,7 +12,8 @@ const fraccionamiento = db.define("fraccionamiento", {
         type: DataTypes.TINYINT
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default fraccionamiento;

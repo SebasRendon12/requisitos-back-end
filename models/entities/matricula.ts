@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const matricula = db.define("matricula", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -22,7 +21,8 @@ const matricula = db.define("matricula", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default matricula;
