@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const departamento = db.define("departamento", {
     id_departamento: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -14,7 +13,8 @@ const departamento = db.define("departamento", {
         type: DataTypes.STRING(100)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default departamento;

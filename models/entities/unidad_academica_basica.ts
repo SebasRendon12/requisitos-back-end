@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const unidad_academica_basica = db.define("unidad_academica_basica", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -26,7 +25,8 @@ const unidad_academica_basica = db.define("unidad_academica_basica", {
         type: DataTypes.STRING(150)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default unidad_academica_basica;

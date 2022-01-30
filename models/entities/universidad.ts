@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const universidad = db.define("universidad", {
   id: {
-    allowNull: false,
     primaryKey: true,
     unique: true,
     type: DataTypes.INTEGER,
@@ -14,7 +13,8 @@ const universidad = db.define("universidad", {
     type: DataTypes.STRING(200)
   },
 }, {
-  timestamps: false
+  timestamps: false,
+    freezeTableName: true,
 });
 
 export default universidad;

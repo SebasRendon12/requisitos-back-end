@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const usuario = db.define("usuario", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -21,7 +20,7 @@ const usuario = db.define("usuario", {
         allowNull: true,
         type: DataTypes.STRING(100)
     },
-    contraseña: {
+    contrasena: {
         allowNull: true,
         type: DataTypes.STRING(100)
     },
@@ -34,7 +33,8 @@ const usuario = db.define("usuario", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default usuario;

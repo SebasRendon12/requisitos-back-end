@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const paz_y_salvo = db.define("paz_y_salvo", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -30,7 +29,8 @@ const paz_y_salvo = db.define("paz_y_salvo", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default paz_y_salvo;

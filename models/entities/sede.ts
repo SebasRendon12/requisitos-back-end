@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const sede = db.define("sede", {
   id: {
-    allowNull: false,
     primaryKey: true,
     unique: true,
     type: DataTypes.INTEGER,
@@ -34,7 +33,8 @@ const sede = db.define("sede", {
     type: DataTypes.INTEGER
   },
 }, {
-  timestamps: false
+  timestamps: false,
+    freezeTableName: true,
 });
 
 export default sede;

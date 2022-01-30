@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const nota = db.define("nota", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const nota = db.define("nota", {
         type: DataTypes.FLOAT
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default nota;

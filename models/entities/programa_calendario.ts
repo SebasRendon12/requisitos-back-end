@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const programa_calendario = db.define("programa_calendario", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -26,7 +25,8 @@ const programa_calendario = db.define("programa_calendario", {
         type: DataTypes.STRING(20)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default programa_calendario;

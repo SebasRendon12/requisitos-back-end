@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const estado = db.define("estado", {
     id_estado: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const estado = db.define("estado", {
         type: DataTypes.STRING(100)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default estado;

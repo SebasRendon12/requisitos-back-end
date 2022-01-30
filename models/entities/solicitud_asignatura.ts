@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const solicitud_asignatura = db.define("solicitud_asignatura", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -50,7 +49,8 @@ const solicitud_asignatura = db.define("solicitud_asignatura", {
         type: DataTypes.BOOLEAN
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default solicitud_asignatura;

@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const componente_plan_de_estudio = db.define("componente_plan_de_estudio", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.BIGINT,
@@ -14,7 +13,8 @@ const componente_plan_de_estudio = db.define("componente_plan_de_estudio", {
         type: DataTypes.STRING(20)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default componente_plan_de_estudio;

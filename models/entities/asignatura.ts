@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const asignatura = db.define("asignatura", {
     codigo: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.STRING(20)
@@ -101,7 +100,8 @@ const asignatura = db.define("asignatura", {
         type: DataTypes.BOOLEAN
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default asignatura;

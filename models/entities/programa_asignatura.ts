@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const programa_asignatura = db.define("programa_asignatura", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -34,7 +33,8 @@ const programa_asignatura = db.define("programa_asignatura", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default programa_asignatura;

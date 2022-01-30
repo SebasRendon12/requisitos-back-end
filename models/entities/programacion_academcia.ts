@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const programacion_academcia = db.define("programacion_academcia", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -22,7 +21,8 @@ const programacion_academcia = db.define("programacion_academcia", {
         type: DataTypes.STRING(50)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default programacion_academcia;

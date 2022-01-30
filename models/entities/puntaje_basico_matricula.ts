@@ -3,21 +3,20 @@ import db from "../../db/connection";
 
 const puntaje_basico_matricula = db.define("puntaje_basico_matricula", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
         autoIncrement: true
     },
-    Valor: {
+    valor: {
         allowNull: true,
         type: DataTypes.FLOAT
     },
-    Punto: {
+    punto: {
         allowNull: true,
         type: DataTypes.INTEGER
     },
-    Consistencia: {
+    consistencia: {
         allowNull: true,
         type: DataTypes.STRING(500)
     },
@@ -30,7 +29,8 @@ const puntaje_basico_matricula = db.define("puntaje_basico_matricula", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default puntaje_basico_matricula;

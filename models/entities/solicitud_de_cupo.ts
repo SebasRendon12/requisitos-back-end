@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const solicitud_de_cupo = db.define("solicitud_de_cupo", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -22,7 +21,8 @@ const solicitud_de_cupo = db.define("solicitud_de_cupo", {
         type: DataTypes.STRING(500)
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default solicitud_de_cupo;

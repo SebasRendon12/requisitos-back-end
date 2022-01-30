@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const estudiante = db.define("estudiante", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -125,7 +124,7 @@ const estudiante = db.define("estudiante", {
         allowNull: true,
         type: DataTypes.STRING(50)
     },
-    Contraseña: {
+    contrasena: {
         allowNull: true,
         type: DataTypes.STRING(50)
     },
@@ -154,7 +153,8 @@ const estudiante = db.define("estudiante", {
         type: DataTypes.INTEGER
     }
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default estudiante;

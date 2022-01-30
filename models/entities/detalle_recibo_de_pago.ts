@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const detalle_recibo_de_pago = db.define("detalle_recibo_de_pago", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -18,7 +17,8 @@ const detalle_recibo_de_pago = db.define("detalle_recibo_de_pago", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default detalle_recibo_de_pago;

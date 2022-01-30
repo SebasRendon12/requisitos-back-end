@@ -3,7 +3,6 @@ import db from "../../db/connection";
 
 const demanda = db.define("demanda", {
     id: {
-        allowNull: false,
         primaryKey: true,
         unique: true,
         type: DataTypes.INTEGER,
@@ -22,7 +21,8 @@ const demanda = db.define("demanda", {
         type: DataTypes.INTEGER
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true,
 });
 
 export default demanda;
