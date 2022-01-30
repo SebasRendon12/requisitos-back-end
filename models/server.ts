@@ -1,13 +1,13 @@
 import express, { Application } from "express";
 import cors from "cors";
 import db from "../db/connection";
-import { userRoutes } from "../routes";
+import { userRoutes, homeRoute } from "../routes";
 
 class Server {
   private app: Application;
   private port: string;
   private paths = {
-    user: "api/users",
+    user: "/users",
   };
 
   constructor() {
@@ -35,6 +35,7 @@ class Server {
   }
 
   routes() {
+    this.app.use("", homeRoute);
     this.app.use(this.paths.user, userRoutes);
   }
 
