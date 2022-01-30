@@ -21,7 +21,7 @@ const usuario = db.define("usuario", {
         allowNull: true,
         type: DataTypes.STRING(100)
     },
-    contraseña: {
+    contrasena: {
         allowNull: true,
         type: DataTypes.STRING(100)
     },
