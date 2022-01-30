@@ -6,8 +6,7 @@ const proyecto = db.define("proyecto", {
         allowNull: false,
         primaryKey: true,
         unique: true,
-        type: DataTypes.STRING(100),
-        autoIncrement: true
+        type: DataTypes.STRING(100)
     },
     codigo: {
         allowNull: true,

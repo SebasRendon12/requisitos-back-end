@@ -6,8 +6,12 @@ const usuario = db.define("usuario", {
         allowNull: false,
         primaryKey: true,
         unique: true,
-        type: DataTypes.STRING(100),
+        type: DataTypes.INTEGER,
         autoIncrement: true
+    },
+    identificacion: {
+        allowNull: true,
+        type: DataTypes.STRING(100)
     },
     nombre_completo: {
         allowNull: true,

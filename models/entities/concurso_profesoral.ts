@@ -6,8 +6,7 @@ const concurso_profesoral = db.define("concurso_profesoral", {
     allowNull: false,
     primaryKey: true,
     unique: true,
-    type: DataTypes.STRING(100),
-    autoIncrement: true
+    type: DataTypes.STRING(100)
   }, 
 }, {
   timestamps: false

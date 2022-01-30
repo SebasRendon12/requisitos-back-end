@@ -6,8 +6,7 @@ const asignatura = db.define("asignatura", {
         allowNull: false,
         primaryKey: true,
         unique: true,
-        type: DataTypes.STRING(20),
-        autoIncrement: true
+        type: DataTypes.STRING(20)
     },
     nivel: {
         allowNull: true,
