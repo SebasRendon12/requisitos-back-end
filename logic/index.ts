@@ -5,12 +5,14 @@ import {
   EditUser,
   DeleteUser
 } from "./l-user";
-import { GetSession } from "./g1/l_session";
+import { DeleteSessions, GetSession, SaveSession } from "./g1/l_session";
 
 export {
 
   //---------------G1---------------------
   GetSession,
+  SaveSession,
+  DeleteSessions,
   //---------------G1---------------------
 
 

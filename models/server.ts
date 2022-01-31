@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import cors from "cors";
 import db from "../db/connection";
-import { userRoutes, homeRoute } from "../routes";
+import { userRoutes, homeRoute, r_session } from "../routes";
 
 // Equipo 2
 import { usuarioRoute, ListaAsignaturasEstudianteRoute } from "../routes/Equipo2/";
@@ -13,7 +13,7 @@ class Server {
     user: "/users",
 
     //---------------G1---------------------
-
+    sesion: "/g1/session",
     //---------------G1---------------------
 
 
@@ -68,11 +68,13 @@ class Server {
   }
 
   routes() {
+    //------------Global--------------------
     this.app.use("", homeRoute);
     this.app.use(this.paths.user, userRoutes);
+    //------------Global--------------------
 
     //---------------G1---------------------
-
+    this.app.use(this.paths.sesion, r_session);
     //---------------G1---------------------
 
 
