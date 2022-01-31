@@ -1,13 +1,14 @@
-import { Sequelize } from 'sequelize';
+import { Sequelize } from "sequelize";
 
-const db = new Sequelize('requisitos', 'root', 'sebas123', { // G1
+const db = new Sequelize("requisitos", "admin", "OjbVrKXQA7pMJahpCs25", {
+  // G1
   // const db = new Sequelize('requisitos', 'root', '', { // G2
   // const db = new Sequelize('requisitos', 'root', '', { // G3
   // const db = new Sequelize('requisitos', 'root', '', { // G6
   // const db = new Sequelize('requisitos', 'root', '', { // G7
   // const db = new Sequelize('requisitos', 'root', '', { // G8
-  host: '127.0.0.1',
-  dialect: 'mysql'
+  host: "database-requisitos.c2ekmahcpt1r.us-east-1.rds.amazonaws.com",
+  dialect: "mysql",
 });
 
 export default db;

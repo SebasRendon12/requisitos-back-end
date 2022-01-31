@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "node": "echo \"Compilando...\" && tsc && echo \"Compilado successfully\" && node dist/app.js"
+    "node": "echo \"Compilando...\" && tsc && echo \"Compilado successfully\" && node dist/app.js",
+    "start": "nodemon -e ts  --exec \"npm run node\""
   },
   "author": "",
   "license": "ISC",
