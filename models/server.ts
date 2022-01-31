@@ -2,7 +2,9 @@ import express, { Application } from "express";
 import cors from "cors";
 import db from "../db/connection";
 import { userRoutes, homeRoute } from "../routes";
-import { usuarioRoute } from "../routes/Equipo2/";
+
+// Equipo 2
+import { usuarioRoute, ListaAsignaturasEstudianteRoute } from "../routes/Equipo2/";
 
 class Server {
   private app: Application;
@@ -11,7 +13,8 @@ class Server {
     user: "/users",
 
     //  Equipo 2
-    usuario: "/usuario"
+    usuario: "/usuario",
+    ListaAsignaturasEstudianteRoute: "/ListaAsignaturasEstudiante",
   };
 
   constructor() {
@@ -44,6 +47,7 @@ class Server {
 
     // Equipo 2
     this.app.use(this.paths.usuario, usuarioRoute);
+    this.app.use(this.paths.ListaAsignaturasEstudianteRoute, ListaAsignaturasEstudianteRoute);
   }
 
   listen() {
