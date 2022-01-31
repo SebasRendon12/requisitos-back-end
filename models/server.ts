@@ -3,11 +3,44 @@ import cors from "cors";
 import db from "../db/connection";
 import { userRoutes, homeRoute } from "../routes";
 
+// Equipo 2
+import { usuarioRoute, ListaAsignaturasEstudianteRoute } from "../routes/Equipo2/";
+
 class Server {
   private app: Application;
   private port: string;
   private paths = {
     user: "/users",
+
+    //---------------G1---------------------
+
+    //---------------G1---------------------
+
+
+    //---------------G2---------------------
+    usuario: "/usuario",
+    ListaAsignaturasEstudianteRoute: "/ListaAsignaturasEstudiante",
+    //---------------G2---------------------
+
+
+    //---------------G3---------------------
+
+    //---------------G3---------------------
+
+
+    //---------------G6---------------------
+
+    //---------------G6---------------------
+
+
+    //---------------G7---------------------
+
+    //---------------G7---------------------
+
+
+    //---------------G8---------------------
+
+    //---------------G8---------------------
   };
 
   constructor() {
@@ -37,6 +70,36 @@ class Server {
   routes() {
     this.app.use("", homeRoute);
     this.app.use(this.paths.user, userRoutes);
+
+    //---------------G1---------------------
+
+    //---------------G1---------------------
+
+
+    //---------------G2---------------------
+    this.app.use(this.paths.usuario, usuarioRoute);
+    this.app.use(this.paths.ListaAsignaturasEstudianteRoute, ListaAsignaturasEstudianteRoute);
+    //---------------G2---------------------
+
+
+    //---------------G3---------------------
+
+    //---------------G3---------------------
+
+
+    //---------------G6---------------------
+
+    //---------------G6---------------------
+
+
+    //---------------G7---------------------
+
+    //---------------G7---------------------
+
+
+    //---------------G8---------------------
+
+    //---------------G8---------------------
   }
 
   listen() {
