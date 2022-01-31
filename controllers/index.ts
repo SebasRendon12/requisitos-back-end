@@ -5,13 +5,10 @@ import {
   edituser,
   deleteuser
 } from "./c-user";
-import { saveSessionController, getSesionController, deleteSesionController } from "./g1/c_session";
 
 export {
   //---------------G1---------------------
-  saveSessionController,
-  getSesionController,
-  deleteSesionController,
+
   //---------------G1---------------------
 
 

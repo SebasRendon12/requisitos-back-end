@@ -1,12 +1,11 @@
 import userRoutes from "./user";
 import homeRoute from "./home";
-import r_session from "./g1/r_session";
 
 export { userRoutes };
 export { homeRoute };
 
 //---------------G1---------------------
-export { r_session };
+
 //---------------G1---------------------
 
 
