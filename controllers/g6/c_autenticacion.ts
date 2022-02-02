@@ -1,8 +1,16 @@
-import { Request, Response } from "express";
+import { Request, Response, } from "express";
+import express from "express"
 import { signinEstudiante, signinFuncionario } from "../../logic";
 
+interface MulterFile {
+    key: string // Available using `S3`.
+    path: string // Available using `DiskStorage`.
+    mimetype: string
+    originalname: string
+    size: number
+  }
 
-export const loginEstudiante = async (req: Request, res: Response) => {
+export const loginEstudiante = async (req: Request & { files: MulterFile[] }, res: Response) => {
     const estudiate_body = req.body;
     
     const estudiante = await signinEstudiante(estudiate_body.usuario, estudiate_body.contrasena);
@@ -17,7 +25,10 @@ export const loginEstudiante = async (req: Request, res: Response) => {
     }
 }
 
-export const loginFuncionario = async (req: Request, res: Response) => {
+//@ts_ignore
+export const loginFuncionario = async (req: Request & { files: MulterFile[] }, res: Response) => {
+    
+    console.log(req.files)
     const user = req.body;
     const funcionario = await signinFuncionario(user.usuario, user.contrasena);
     if (funcionario) {

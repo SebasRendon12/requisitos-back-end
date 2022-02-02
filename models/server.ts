@@ -32,9 +32,9 @@ class Server {
 
 
     //---------------G6---------------------
-    loging6:"/api/g6/login",
-    estudiante6:"/api/g6/estudiante",
-    funcionario6:"/api/g6/funcionario",
+    loging6:"/g6/login",
+    estudiante6:"/g6/estudiante",
+    funcionario6:"/g6/funcionario",
     //---------------G6---------------------
 
 
