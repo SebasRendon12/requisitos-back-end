@@ -6,6 +6,9 @@ import { userRoutes, homeRoute, r_session } from "../routes";
 // Equipo 2
 import { usuarioRoute, ListaAsignaturasEstudianteRoute } from "../routes/Equipo2/";
 
+//Equipo 6
+import { autenticacion,estudiante,funcionario } from "../routes/g6/"
+
 class Server {
   private app: Application;
   private port: string;
@@ -29,7 +32,9 @@ class Server {
 
 
     //---------------G6---------------------
-
+    loging6:"/api/g6/login",
+    estudiante6:"/api/g6/estudiante",
+    funcionario6:"/api/g6/funcionario",
     //---------------G6---------------------
 
 
@@ -90,7 +95,9 @@ class Server {
 
 
     //---------------G6---------------------
-
+    this.app.use(this.paths.loging6,autenticacion);
+    this.app.use(this.paths.estudiante6,estudiante);
+    this.app.use(this.paths.funcionario6, funcionario);
     //---------------G6---------------------
 
 
