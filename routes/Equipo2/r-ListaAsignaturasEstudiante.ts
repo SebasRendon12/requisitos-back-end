@@ -3,6 +3,6 @@ import { getasignaturas } from "../../controllers/Equipo2/c-ListaAsignaturasEstu
 
 const router = Router();
 
-router.get("/:id", [], getasignaturas);
+router.get("/:id/:periodo", [], getasignaturas);
 
 export default router;

@@ -20,7 +20,7 @@ const historia_academica = db.define("historia_academica", {
         allowNull: true,
         type: DataTypes.STRING(20)
     },
-    calificación: {
+    calificacion: {
         allowNull: true,
         type: DataTypes.FLOAT
     },
