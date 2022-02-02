@@ -1,4 +1,4 @@
-import { Op } from "sequelize/dist";
+import { Op } from "sequelize";
 import { estudiante } from "../../models/entities";
 
 

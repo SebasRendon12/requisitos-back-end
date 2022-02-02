@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 
-const db = new Sequelize('requisitos', 'root', 'Nazlyman05$', { // G1
+const db = new Sequelize('requisitos', 'root', 'sebas123', { // G1
   //  const db = new Sequelize('requisitos', 'root', '', { // G2
   // const db = new Sequelize('requisitos', 'root', '', { // G3
   // const db = new Sequelize('requisitos', 'root', '', { // G6

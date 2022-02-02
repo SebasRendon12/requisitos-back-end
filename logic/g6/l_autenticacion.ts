@@ -1,4 +1,4 @@
-import { Op } from "sequelize/dist";
+import { Op } from "sequelize";
 import { funcionario,estudiante } from "../../models/entities";
 
 export const signinEstudiante =async (usuario:string,contrasena:string) => {
