@@ -1,13 +1,5 @@
 import { Request, Response } from "express";
-import { GetUsers, GetUser } from "../../logic/Equipo2/l-usuario";
-
-export const getusers = async (req: Request, res: Response) => {
-  const users = await GetUsers();
-  res.status(200).json({
-    success: true,
-    message: users
-  })
-}
+import { GetUser } from "../../logic/Equipo2/l-usuario";
 
 export const getuser = async (req: Request, res: Response) => {
   const { nombre_usuario, contrasena } = req.params;

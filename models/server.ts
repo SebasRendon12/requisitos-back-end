@@ -4,7 +4,8 @@ import db from "../db/connection";
 import { userRoutes, homeRoute, r_session } from "../routes";
 
 // Equipo 2
-import { usuarioRoute, ListaAsignaturasEstudianteRoute } from "../routes/Equipo2/";
+import { usuarioRoute, ListaAsignaturasEstudianteRoute, ListaAsignaturasDocenteRoute, ListaGruposVinculadosRoute,
+CrearActividadesRoute, CalificacionesRoute, BuscarAsignaturaRoute } from "../routes/Equipo2/";
 
 class Server {
   private app: Application;
@@ -20,6 +21,11 @@ class Server {
     //---------------G2---------------------
     usuario: "/usuario",
     ListaAsignaturasEstudianteRoute: "/ListaAsignaturasEstudiante",
+    ListaAsignaturasDocenteRoute: "/ListaAsignaturasDocente",
+    ListaGruposVinculadosRoute: "/ListaGruposVinculados",
+    CrearActividadesRoute: "/CrearActividades",
+    CalificacionesRoute: "/Calificaciones",
+    BuscarAsignaturaRoute: "/BuscarAsignatura",
     //---------------G2---------------------
 
 
@@ -79,8 +85,15 @@ class Server {
 
 
     //---------------G2---------------------
+
     this.app.use(this.paths.usuario, usuarioRoute);
     this.app.use(this.paths.ListaAsignaturasEstudianteRoute, ListaAsignaturasEstudianteRoute);
+    this.app.use(this.paths.ListaAsignaturasDocenteRoute, ListaAsignaturasDocenteRoute);
+    this.app.use(this.paths.ListaGruposVinculadosRoute, ListaGruposVinculadosRoute);
+    this.app.use(this.paths.CrearActividadesRoute, CrearActividadesRoute);
+    this.app.use(this.paths.CalificacionesRoute, CalificacionesRoute);
+    this.app.use(this.paths.BuscarAsignaturaRoute, BuscarAsignaturaRoute);
+    
     //---------------G2---------------------
 
 

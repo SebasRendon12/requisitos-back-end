@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { GetAsignaturas } from "../../logic/Equipo2/l-ListaAsignaturasEstudiante";
+import { GetAsignaturas } from "../../logic/Equipo2/l-ListaAsignaturasDocente";
 
 export const getasignaturas = async (req: Request, res: Response) => {
-    const { id, periodo } = req.params;
-    const asignaturas = await GetAsignaturas(String(id), String(periodo));
+    const { id } = req.params;
+    const asignaturas = await GetAsignaturas(String(id));
     if (asignaturas) {
       res.status(200).json({
         success: true,
