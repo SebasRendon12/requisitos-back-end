@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import cors from "cors";
-import db, { DB } from "../db/connection";
-import { userRoutes, homeRoute } from "../routes";
+import db from "../db/connection";
+import { userRoutes, homeRoute, r_session } from "../routes";
 
 // Equipo 2
 import { usuarioRoute, ListaAsignaturasEstudianteRoute, ListaAsignaturasDocenteRoute, ListaGruposVinculadosRoute,
@@ -14,7 +14,7 @@ class Server {
     user: "/users",
 
     //---------------G1---------------------
-
+    sesion: "/g1/session",
     //---------------G1---------------------
 
 
@@ -74,11 +74,13 @@ class Server {
   }
 
   routes() {
+    //------------Global--------------------
     this.app.use("", homeRoute);
     this.app.use(this.paths.user, userRoutes);
+    //------------Global--------------------
 
     //---------------G1---------------------
-
+    this.app.use(this.paths.sesion, r_session);
     //---------------G1---------------------
 
 
