@@ -11,3 +11,12 @@ import { Sequelize } from 'sequelize';
 });
 
 export default db;
+
+var mysql = require('mysql');
+
+ export const DB = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "requisitos"
+});
