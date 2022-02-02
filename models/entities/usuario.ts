@@ -18,6 +18,7 @@ const usuario = db.define("usuario", {
     },
     nombre_usuario: {
         allowNull: true,
+        unique: true,
         type: DataTypes.STRING(100)
     },
     contrasena: {
@@ -36,5 +37,29 @@ const usuario = db.define("usuario", {
     timestamps: false,
     freezeTableName: true,
 });
+
+/* usuario.create({
+    identificacion: "1001774262",
+    nombre_completo: "Julian Carvajal",
+    nombre_usuario: "estudiante1",
+    contrasena: "12345",
+    perfil: "estudiante",
+})
+
+usuario.create({
+    identificacion: "1001774362",
+    nombre_completo: "Sebastian Lopez Mazo",
+    nombre_usuario: "estudiante2",
+    contrasena: "12345",
+    perfil: "estudiante",
+})
+
+usuario.create({
+    identificacion: "123456789",
+    nombre_completo: "Juan David",
+    nombre_usuario: "estudiante3",
+    contrasena: "12345",
+    perfil: "estudiante",
+}) */
 
 export default usuario;

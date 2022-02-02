@@ -8,6 +8,10 @@ const calificacion = db.define("calificacion", {
         type: DataTypes.INTEGER,
         autoIncrement: true
     },
+    id_grupo: {
+      allowNull: true,
+      type: DataTypes.INTEGER
+    },
     id_actividad: {
         allowNull: true,
         type: DataTypes.INTEGER

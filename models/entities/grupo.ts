@@ -24,7 +24,7 @@ const grupo = db.define("grupo", {
         allowNull: true,
         type: DataTypes.TINYINT
     },
-    salón: {
+    salon: {
         allowNull: true,
         type: DataTypes.STRING(20)
     },
