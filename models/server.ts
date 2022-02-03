@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import cors from "cors";
 import db from "../db/connection";
-import { userRoutes, homeRoute, r_session } from "../routes";
+import { userRoutes, homeRoute, r_session, r_usuario, r_login } from "../routes";
 import g7Routes from "../routes/g7/routes";
 
 // Equipo 2
@@ -23,6 +23,8 @@ class Server {
 
     //---------------G1---------------------
     sesion: "/g1/session",
+    usuariog1: "/g1/user",
+    logIn: "/g1/login",
     //---------------G1---------------------
 
     //---------------G2---------------------
@@ -63,7 +65,7 @@ class Server {
   async dbConnection() {
     try {
       await db.authenticate();
-      //await db.sync({ alter: true });
+      // await db.sync({ alter: true });
       console.log("MySql connected");
     } catch (error: any) {
       throw new Error(error);
@@ -85,6 +87,8 @@ class Server {
 
     //---------------G1---------------------
     this.app.use(this.paths.sesion, r_session);
+    this.app.use(this.paths.usuariog1, r_usuario);
+    this.app.use(this.paths.logIn, r_login);
     //---------------G1---------------------
 
     //---------------G2---------------------

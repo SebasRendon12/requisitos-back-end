@@ -1,23 +1,10 @@
 import { Router } from "express";
-import { ValidateFields } from "../../middlewares";
-import { check } from "express-validator";
+import { getAdmittedByUser, getFunctionaryByUser, getStudentByUser } from "../../controllers";
 
 const router = Router();
 
-// router.get("/", [], getusers);
-// router.get("/parent/:id", [], getuser);
-// router.post("/", [
-//   check("name", "Nombre es requerido").not().isEmpty(),
-//   check("age", "Edad es requerido").not().isEmpty(),
-//   check("sex", "Sexo es requerido").not().isEmpty(),
-//   ValidateFields
-// ], saveuser);
-// router.put("/:id", [
-//   check("name", "Nombre es requerido").not().isEmpty(),
-//   check("age", "Edad es requerido").not().isEmpty(),
-//   check("sex", "Sexo es requerido").not().isEmpty(),
-//   ValidateFields
-// ], edituser);
-// router.delete("/:id", [], deleteuser);
+router.get("/student/:id", [], getStudentByUser);
+router.get("/admitted/:id", [], getAdmittedByUser);
+router.get("/functionary/:id", [], getFunctionaryByUser);
 
 export default router;

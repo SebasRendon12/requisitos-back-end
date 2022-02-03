@@ -5,13 +5,21 @@ import {
   edituser,
   deleteuser
 } from "./c-user";
+import { signIn } from "./g1/c_login";
 import { saveSessionController, getSesionController, deleteSesionController } from "./g1/c_session";
+import { getAdmittedByUser, getFunctionaryByUser, getStudentByUser } from "./g1/c_usuario";
 
 export {
   //---------------G1---------------------
   saveSessionController,
   getSesionController,
   deleteSesionController,
+
+  getStudentByUser,
+  getAdmittedByUser,
+  getFunctionaryByUser,
+
+  signIn,
   //---------------G1---------------------
 
 
