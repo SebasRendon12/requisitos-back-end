@@ -7,8 +7,8 @@ export const GetEstudiantes = async () => {
     return Estudiante;
 }
 
-export const GetEstudiante = async (cedula: any) => {
-    const Estudiante = await estudiante.findByPk(cedula);
+export const GetEstudiante = async (id: any) => {
+    const Estudiante = await estudiante.findByPk(id);
     if (Estudiante) {
         return Estudiante;
     } else {
@@ -16,28 +16,20 @@ export const GetEstudiante = async (cedula: any) => {
     }
 }
 
-export const UpdateEstudianteFinanciera =async (cedula:number,datos:any,files:any) => {
+export const UpdateEstudianteFinanciera =async (id:number,datos:any,files:any) => {
     if (!files || Object.keys(files).length ===0) return null
-    
+    console.log(files.recibo)
     if (files.recibo){
-        const uploadPathRecibo = __dirname+'/public/'+cedula.toString()+"/"+files.recibo.name;
-        files.recibo.mv(uploadPathRecibo, function(err:Error) {
-            if (err) return null;
-        });
+        datos.path_recibo = files.recibo[0].path
     } if (files.certificado){
-        const uploadPathCertificado = __dirname+'/public/'+cedula.toString()+"/"+files.certificado.name
-        files.certificado.mv(uploadPathCertificado, (err:Error) => {
-            if (err) return null;
-        });
+        datos.path_certificado = files.certificado[0].path
     } if (files.declaracion){
-        const uploadPathDeclaracion = __dirname+'/public/'+cedula.toString()+"/"+files.declaracion.name
-        files.declaracion.mv(uploadPathDeclaracion, (err:Error) => {
-            if (err) return null;
-        });
+        datos.path_declaracion = files.declaracion[0].path
     }
     
-    const Estudiante = await estudiante.findByPk(cedula);
+    const Estudiante = await estudiante.findOne({where:{id}});
     if (Estudiante){
+        console.log(datos)
         await Estudiante.set(datos);
         await Estudiante.save();
         return Estudiante;
@@ -46,9 +38,9 @@ export const UpdateEstudianteFinanciera =async (cedula:number,datos:any,files:an
     }
 }
 
-export const UpdateEstudianteResidencia =async (cedula:number,datos:any) => {
+export const UpdateEstudianteResidencia =async (id:number,datos:any) => {
     
-    const Estudiante = await estudiante.findByPk(cedula);
+    const Estudiante = await estudiante.findByPk(id);
     if (Estudiante){
         await Estudiante.set(datos);
         await Estudiante.save();

@@ -10,7 +10,8 @@ const apoyo_socioeconomico = db.define("apoyo_socioeconomico", {
     },
     apoyo_socioeconomico: {
         allowNull: true,
-        type: DataTypes.STRING(100)
+        type: DataTypes.STRING(100),
+        unique:true
     },
     estado: {
         allowNull: true,

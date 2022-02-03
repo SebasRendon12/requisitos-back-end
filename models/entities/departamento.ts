@@ -10,7 +10,8 @@ const departamento = db.define("departamento", {
     },
     departamento: {
         allowNull: true,
-        type: DataTypes.STRING(100)
+        type: DataTypes.STRING(100),
+        unique:true
     },
 }, {
     timestamps: false,

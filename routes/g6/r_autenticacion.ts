@@ -3,6 +3,7 @@ import { check } from "express-validator";
 import { loginEstudiante, loginFuncionario } from "../../controllers/g6/c_autenticacion";
 import { ValidateFields } from "../../middlewares";
 
+
 const router = Router();
 
 router.post("/signinfuncionario", [

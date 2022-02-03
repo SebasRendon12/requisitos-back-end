@@ -36,7 +36,7 @@ const estudiante = db.define("estudiante", {
         allowNull: true,
         type: DataTypes.STRING(5)
     },
-    identificación: {
+    identificacion: {
         allowNull: true,
         type: DataTypes.BIGINT
     },
@@ -151,6 +151,21 @@ const estudiante = db.define("estudiante", {
     usuario_id: {
         allowNull: true,
         type: DataTypes.INTEGER
+    },
+    path_recibo: {
+        allowNull: true,
+        type: DataTypes.STRING(300),
+        unique:true
+    },
+    path_certificado: {
+        allowNull: true,
+        type: DataTypes.STRING(300),
+        unique:true
+    },
+    path_declaracion: {
+        allowNull: true,
+        type: DataTypes.STRING(300),
+        unique:true
     }
 }, {
     timestamps: false,

@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import cors from "cors";
 import db from "../db/connection";
+import { run } from "../db/g6/create_default"
 import { userRoutes, homeRoute, r_session } from "../routes";
 import g7Routes from "../routes/g7/routes";
 
@@ -69,6 +70,8 @@ class Server {
     try {
       await db.authenticate();
       //await db.sync({ alter: true });
+      //await run();
+      
       console.log("MySql connected");
     } catch (error: any) {
       throw new Error(error);
