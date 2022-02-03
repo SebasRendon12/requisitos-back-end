@@ -26,18 +26,20 @@ export const getsolicitudescupo = async (req: Request, res: Response) => {
     DB.query("SELECT solicitud_de_cupo.id, solicitud_de_cupo.grupo, solicitud_de_cupo.motivo FROM solicitud_de_cupo WHERE solicitud_de_cupo.codigo_asignatura = " + codigo_asignatura,
         (err: any, rows: any, fields: any) => {
             try {
-                res.status(200).json({
-                    success: true,
-                    message: rows
-                })
+                if (rows)
+                    res.status(200).json({
+                        success: true,
+                        message: rows
+                    })
                 //res.send(rows);
-
-            } catch (error) {
-                console.log(err)
+                else
+                    console.log(err)
                 res.status(404).json({
                     success: false,
                     message: false
                 })
+            } catch (error) {
+
             }
         })
 }
