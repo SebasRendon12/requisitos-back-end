@@ -36,7 +36,7 @@ const estudiante = db.define("estudiante", {
         allowNull: true,
         type: DataTypes.STRING(5)
     },
-    identificación: {
+    identificacion: {
         allowNull: true,
         type: DataTypes.BIGINT
     },
