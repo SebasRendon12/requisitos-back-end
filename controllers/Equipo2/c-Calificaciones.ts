@@ -23,7 +23,7 @@ export const getcalificaciones = async (req: Request, res: Response) => {
     DB.query("select usuario.identificacion, usuario.nombre_completo FROM usuario INNER JOIN calificacion ON usuario.identificacion = calificacion.id_estudiante INNER JOIN actividad on calificacion.id_actividad=actividad.id WHERE calificacion.id_grupo =" +id_grupo+ " GROUP BY usuario.identificacion",
         (err: any, rows: any, fields: any) => {
             try {
-                if (!err)
+                if (rows)
                     res.status(200).json({
                         success: true,
                         message: rows

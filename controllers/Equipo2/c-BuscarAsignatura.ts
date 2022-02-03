@@ -6,7 +6,7 @@ export const BuscarAsignatura = async (req: Request, res: Response) => {
     DB.query("SELECT asignatura.nivel, asignatura.departamento, asignatura.nombre, asignatura.codigo, asignatura.horas_actividad_presencial, asignatura.horas_actividad_autonomas, asignatura.plan_de_estudios, asignatura.validable, asignatura.porcentaje_de_asistencia, asignatura.tipologia, asignatura.contenido, asignatura.en_oferta FROM asignatura WHERE asignatura.codigo = "+codigo_asignatura,
         (err: any, rows: any, fields: any) => {
             try {
-                if (!err)
+                if (rows)
                     res.status(200).json({
                         success: true,
                         message: rows

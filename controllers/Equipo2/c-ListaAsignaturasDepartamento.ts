@@ -5,7 +5,7 @@ export const getlistaasignaturasdepartamento = async (req: Request, res: Respons
     DB.query("SELECT asignatura.codigo, asignatura.nombre FROM asignatura ORDER BY asignatura.codigo",
         (err: any, rows: any, fields: any) => {
             try {
-                if (!err)
+                if (rows)
                     res.status(200).json({
                         success: true,
                         message: rows
