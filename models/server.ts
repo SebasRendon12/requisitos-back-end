@@ -2,6 +2,7 @@ import express, { Application } from "express";
 import cors from "cors";
 import db from "../db/connection";
 import { userRoutes, homeRoute, r_session } from "../routes";
+import g7Routes from "../routes/g7/routes";
 
 // Equipo 2
 import { usuarioRoute, ListaAsignaturasEstudianteRoute, ListaAsignaturasDocenteRoute, ListaGruposVinculadosRoute,
@@ -17,7 +18,6 @@ class Server {
     //---------------G1---------------------
     sesion: "/g1/session",
     //---------------G1---------------------
-
 
     //---------------G2---------------------
     usuario: "/usuario",
@@ -36,21 +36,17 @@ class Server {
     CrearAsignaturaRoute: "/CrearAsignatura",
     //---------------G2---------------------
 
-
     //---------------G3---------------------
 
     //---------------G3---------------------
-
 
     //---------------G6---------------------
 
     //---------------G6---------------------
 
-
     //---------------G7---------------------
 
     //---------------G7---------------------
-
 
     //---------------G8---------------------
 
@@ -59,7 +55,7 @@ class Server {
 
   constructor() {
     this.app = express();
-    this.port = process.env.PORT || '8000';
+    this.port = process.env.PORT || "8000";
     this.dbConnection();
     this.middlewares();
     this.routes();
@@ -68,8 +64,8 @@ class Server {
   async dbConnection() {
     try {
       await db.authenticate();
-      // await db.sync({ alter: true });
-      console.log('MySql connected');
+      //await db.sync({ alter: true });
+      console.log("MySql connected");
     } catch (error: any) {
       throw new Error(error);
     }
@@ -78,26 +74,35 @@ class Server {
   middlewares() {
     this.app.use(cors());
     this.app.use(express.json());
-    this.app.use(express.static('public'));
+    this.app.use(express.static("public"));
   }
 
   routes() {
     //------------Global--------------------
     this.app.use("", homeRoute);
     this.app.use(this.paths.user, userRoutes);
+    this.app.use("/g7", g7Routes);
     //------------Global--------------------
 
     //---------------G1---------------------
     this.app.use(this.paths.sesion, r_session);
     //---------------G1---------------------
 
-
     //---------------G2---------------------
 
     this.app.use(this.paths.usuario, usuarioRoute);
-    this.app.use(this.paths.ListaAsignaturasEstudianteRoute, ListaAsignaturasEstudianteRoute);
-    this.app.use(this.paths.ListaAsignaturasDocenteRoute, ListaAsignaturasDocenteRoute);
-    this.app.use(this.paths.ListaGruposVinculadosRoute, ListaGruposVinculadosRoute);
+    this.app.use(
+      this.paths.ListaAsignaturasEstudianteRoute,
+      ListaAsignaturasEstudianteRoute
+    );
+    this.app.use(
+      this.paths.ListaAsignaturasDocenteRoute,
+      ListaAsignaturasDocenteRoute
+    );
+    this.app.use(
+      this.paths.ListaGruposVinculadosRoute,
+      ListaGruposVinculadosRoute
+    );
     this.app.use(this.paths.CrearActividadesRoute, CrearActividadesRoute);
     this.app.use(this.paths.CalificacionesRoute, CalificacionesRoute);
     this.app.use(this.paths.BuscarAsignaturaRoute, BuscarAsignaturaRoute);
@@ -111,21 +116,19 @@ class Server {
     
     //---------------G2---------------------
 
+    //---------------G2---------------------
 
     //---------------G3---------------------
 
     //---------------G3---------------------
 
-
     //---------------G6---------------------
 
     //---------------G6---------------------
 
-
     //---------------G7---------------------
 
     //---------------G7---------------------
-
 
     //---------------G8---------------------
 
@@ -134,7 +137,7 @@ class Server {
 
   listen() {
     this.app.listen(this.port, () => {
-      console.log('Server running in ' + this.port);
+      console.log("Server running in " + this.port);
     });
   }
 }
