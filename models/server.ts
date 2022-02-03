@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 import cors from "cors";
 import db from "../db/connection";
-import { userRoutes, homeRoute, r_session, r_usuario, r_login } from "../routes";
+import { userRoutes, homeRoute, r_session, r_usuario, r_login, r_receipts } from "../routes";
 import g7Routes from "../routes/g7/routes";
 
 // Equipo 2
@@ -21,6 +21,7 @@ class Server {
     sesion: "/g1/session",
     usuariog1: "/g1/user",
     logIn: "/g1/login",
+    payReceipts: "/g1/paymentreceipts",
     //---------------G1---------------------
 
     //---------------G2---------------------
@@ -92,6 +93,7 @@ class Server {
     this.app.use(this.paths.sesion, r_session);
     this.app.use(this.paths.usuariog1, r_usuario);
     this.app.use(this.paths.logIn, r_login);
+    this.app.use(this.paths.payReceipts, r_receipts);
     //---------------G1---------------------
 
     //---------------G2---------------------

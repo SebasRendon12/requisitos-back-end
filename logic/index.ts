@@ -7,6 +7,7 @@ import {
 } from "./l-user";
 import { DeleteSessions, GetSession, SaveSession } from "./g1/l_session";
 import { GetAdmittedByUser, GetFunctionaryByUser, GetStudentByUser } from "./g1/l_usuario";
+import { EnableReceipts, GetPeriod } from "./g1/l_receipts";
 import { SignIn } from "./g1/l_login";
 
 export {
@@ -21,6 +22,9 @@ export {
   GetFunctionaryByUser,
 
   SignIn,
+
+  EnableReceipts,
+  GetPeriod,
   //---------------G1---------------------
 
 

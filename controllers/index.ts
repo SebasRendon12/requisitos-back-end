@@ -6,6 +6,7 @@ import {
   deleteuser
 } from "./c-user";
 import { signIn } from "./g1/c_login";
+import { enableReceipts, getPeriod } from "./g1/c_receipts";
 import { saveSessionController, getSesionController, deleteSesionController } from "./g1/c_session";
 import { getAdmittedByUser, getFunctionaryByUser, getStudentByUser } from "./g1/c_usuario";
 
@@ -20,6 +21,9 @@ export {
   getFunctionaryByUser,
 
   signIn,
+
+  enableReceipts,
+  getPeriod,
   //---------------G1---------------------
 
 
