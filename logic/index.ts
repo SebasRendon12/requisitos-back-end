@@ -6,6 +6,8 @@ import {
   DeleteUser
 } from "./l-user";
 import { DeleteSessions, GetSession, SaveSession } from "./g1/l_session";
+import { GetAdmittedByUser, GetFunctionaryByUser, GetStudentByUser } from "./g1/l_usuario";
+import { SignIn } from "./g1/l_login";
 
 //Grupo 6
 import { signinEstudiante,signinFuncionario } from "./g6/l_autenticacion";
@@ -23,6 +25,12 @@ export {
   GetSession,
   SaveSession,
   DeleteSessions,
+
+  GetStudentByUser,
+  GetAdmittedByUser,
+  GetFunctionaryByUser,
+
+  SignIn,
   //---------------G1---------------------
 
 

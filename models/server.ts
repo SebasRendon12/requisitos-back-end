@@ -2,18 +2,14 @@ import express, { Application } from "express";
 import cors from "cors";
 import db from "../db/connection";
 import { run } from "../db/g6/create_default"
-import { userRoutes, homeRoute, r_session } from "../routes";
+import { userRoutes, homeRoute, r_session, r_usuario, r_login } from "../routes";
 import g7Routes from "../routes/g7/routes";
 
 // Equipo 2
 import {
-  usuarioRoute,
-  ListaAsignaturasEstudianteRoute,
-  ListaAsignaturasDocenteRoute,
-  ListaGruposVinculadosRoute,
-  CrearActividadesRoute,
-  CalificacionesRoute,
-  BuscarAsignaturaRoute,
+  usuarioRoute, ListaAsignaturasEstudianteRoute, ListaAsignaturasDocenteRoute, ListaGruposVinculadosRoute,
+  CrearActividadesRoute, CalificacionesRoute, BuscarAsignaturaRoute, SolicitudCupoRoute, SolicitudAsignaturaRoute,
+  ListaAsignaturasDepartamentoRoute, CrearGrupoRoute, DefinirHorarioRoute, ListaAsignaturasSolicitudRoute, CrearAsignaturaRoute
 } from "../routes/Equipo2/";
 
 //Equipo 6
@@ -27,6 +23,8 @@ class Server {
 
     //---------------G1---------------------
     sesion: "/g1/session",
+    usuariog1: "/g1/user",
+    logIn: "/g1/login",
     //---------------G1---------------------
 
     //---------------G2---------------------
@@ -37,6 +35,13 @@ class Server {
     CrearActividadesRoute: "/CrearActividades",
     CalificacionesRoute: "/Calificaciones",
     BuscarAsignaturaRoute: "/BuscarAsignatura",
+    SolicitudCupoRoute: "/SolicitudCupo",
+    SolicitudAsignaturaRoute: "/SolicitudAsignatura",
+    ListaAsignaturasDepartamentoRoute: "/ListaAsignaturasDepartamento",
+    CrearGrupoRoute: "/CrearGrupo",
+    DefinirHorarioRoute: "/DefinirHorario",
+    ListaAsignaturasSolicitudRoute: "/ListaAsignaturasSolicitud",
+    CrearAsignaturaRoute: "/CrearAsignatura",
     //---------------G2---------------------
 
     //---------------G3---------------------
@@ -72,6 +77,7 @@ class Server {
       //await db.sync({ alter: true });
       //await run();
       
+      // await db.sync({ alter: true });
       console.log("MySql connected");
     } catch (error: any) {
       throw new Error(error);
@@ -93,6 +99,8 @@ class Server {
 
     //---------------G1---------------------
     this.app.use(this.paths.sesion, r_session);
+    this.app.use(this.paths.usuariog1, r_usuario);
+    this.app.use(this.paths.logIn, r_login);
     //---------------G1---------------------
 
     //---------------G2---------------------
@@ -113,6 +121,15 @@ class Server {
     this.app.use(this.paths.CrearActividadesRoute, CrearActividadesRoute);
     this.app.use(this.paths.CalificacionesRoute, CalificacionesRoute);
     this.app.use(this.paths.BuscarAsignaturaRoute, BuscarAsignaturaRoute);
+    this.app.use(this.paths.SolicitudCupoRoute, SolicitudCupoRoute);
+    this.app.use(this.paths.SolicitudAsignaturaRoute, SolicitudAsignaturaRoute);
+    this.app.use(this.paths.ListaAsignaturasDepartamentoRoute, ListaAsignaturasDepartamentoRoute);
+    this.app.use(this.paths.CrearGrupoRoute, CrearGrupoRoute);
+    this.app.use(this.paths.DefinirHorarioRoute, DefinirHorarioRoute);
+    this.app.use(this.paths.ListaAsignaturasSolicitudRoute, ListaAsignaturasSolicitudRoute);
+    this.app.use(this.paths.CrearAsignaturaRoute, CrearAsignaturaRoute);
+
+    //---------------G2---------------------
 
     //---------------G2---------------------
 
