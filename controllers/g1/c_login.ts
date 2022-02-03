@@ -4,7 +4,6 @@ import { SignIn } from "../../logic";
 export const signIn = async (req: Request, res: Response) => {
   const { body } = req;
   try {
-    console.log(body);
     const user = await SignIn(body.nombre_usuario, body.contrasena);
     if (user !== null) {
       res.status(200).json({

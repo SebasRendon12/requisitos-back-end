@@ -5,9 +5,11 @@ import { userRoutes, homeRoute, r_session, r_usuario, r_login } from "../routes"
 import g7Routes from "../routes/g7/routes";
 
 // Equipo 2
-import { usuarioRoute, ListaAsignaturasEstudianteRoute, ListaAsignaturasDocenteRoute, ListaGruposVinculadosRoute,
-CrearActividadesRoute, CalificacionesRoute, BuscarAsignaturaRoute, SolicitudCupoRoute, SolicitudAsignaturaRoute,
-ListaAsignaturasDepartamentoRoute, CrearGrupoRoute, DefinirHorarioRoute, ListaAsignaturasSolicitudRoute, CrearAsignaturaRoute } from "../routes/Equipo2/";
+import {
+  usuarioRoute, ListaAsignaturasEstudianteRoute, ListaAsignaturasDocenteRoute, ListaGruposVinculadosRoute,
+  CrearActividadesRoute, CalificacionesRoute, BuscarAsignaturaRoute, SolicitudCupoRoute, SolicitudAsignaturaRoute,
+  ListaAsignaturasDepartamentoRoute, CrearGrupoRoute, DefinirHorarioRoute, ListaAsignaturasSolicitudRoute, CrearAsignaturaRoute
+} from "../routes/Equipo2/";
 
 class Server {
   private app: Application;
@@ -117,7 +119,7 @@ class Server {
     this.app.use(this.paths.DefinirHorarioRoute, DefinirHorarioRoute);
     this.app.use(this.paths.ListaAsignaturasSolicitudRoute, ListaAsignaturasSolicitudRoute);
     this.app.use(this.paths.CrearAsignaturaRoute, CrearAsignaturaRoute);
-    
+
     //---------------G2---------------------
 
     //---------------G2---------------------
