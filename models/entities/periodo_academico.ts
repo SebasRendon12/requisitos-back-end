@@ -14,15 +14,15 @@ const periodo_academico = db.define("periodo_academico", {
     },
     anno: {
         allowNull: true,
-        type: DataTypes.TINYINT
+        type: DataTypes.INTEGER
     },
     periodo: {
         allowNull: true,
         type: DataTypes.TINYINT
     },
-    estudiante_id: {
+    recibos_de_pago_habilitados: {
         allowNull: true,
-        type: DataTypes.INTEGER
+        type: DataTypes.BOOLEAN
     },
 }, {
     timestamps: false,

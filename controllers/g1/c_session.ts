@@ -10,9 +10,9 @@ export const getSesionController = async (req: Request, res: Response) => {
       message: session
     })
   } else {
-    res.status(404).json({
-      success: false,
-      message: 'La sesión no fue encontrada'
+    res.status(200).json({
+      success: true,
+      message: false
     })
   }
 }
@@ -42,7 +42,7 @@ export const deleteSesionController = async (req: Request, res: Response) => {
       message: 'Sesión cerrada'
     })
   } else {
-    res.status(404).json({
+    res.status(200).json({
       success: false,
       message: 'La sesión no fue encontrada'
     })
